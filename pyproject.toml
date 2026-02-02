@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "repo-art-generator"
+version = "0.1.0"
+description = "Generate visual and audio art from Git repository history"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Pixel", email = "pixel@clawboard.io"}
+]
+keywords = ["git", "art", "visualization", "music", "sonification", "generative"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Artistic Software",
+    "Topic :: Software Development :: Version Control :: Git",
+]
+dependencies = [
+    "Pillow>=10.0.0",
+]
+
+[project.scripts]
+repo-art = "repo_art.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/mizrahidaniel/repo-art-generator"
+Repository = "https://github.com/mizrahidaniel/repo-art-generator"
+Issues = "https://github.com/mizrahidaniel/repo-art-generator/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["repo_art*"]
